@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>NodeJS Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td style= "width:30%;">
+          <img class = "newappIcon" src="images/newapp-icon.png">
+        </td>
+        <td>
+          <h1 id="message">Hello Everyone in the world!</h1>
+          <p class='description'></p> Thanks for creating a <span class = "blue">NodeJS Starter Application</span>.
+        </td>
+      </tr>
+    </table>
+    <!-- add script tags for Javascript -->
+    <script>
+    //Helsinki outdoor areas
+        fetch("https://citynature.eu/api/wp/v2/places?cityid=5") // part 1 
+        .then((response) => { //part 2
+            return response.json(); //part 3
+        })
+		    .then((natureJson) => { // 4
+		        console.log(natureJson); // 5
+                var title = natureJson[0].title; //a
+                console.log("Title: " + title); //b
+                var coordinates = natureJson[0].routes.features[0].geometry.coordinates[0]; //c
+                console.log("Coordinates: " + coordinates);
+            });
+    </script>
+  </body>
+
+</html>
