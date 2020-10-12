@@ -4,7 +4,7 @@
 
 In this Challenge:
   - [Introduction](#introduction)
-  - [Week 1.1 - Build your first application](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.1%20-%20Build%20your%20first%20application)
+  - [Week 1.1 - Build your first application](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%201.1%20-%20Build%20your%20first%20application)
   - [Week 1.2 - Enable Delivery Pipeline](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.2%20-%20Enable%20Delivery%20Pipeline)
   - [Week 1.3 - Modify your application](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.3%20-%20Modify%20your%20application)
   - [Week 2.1 - Add Helsinki Outdoor route API](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%202.1%20-%20Add%20Helsinki%20Outdoor%20route%20API)
