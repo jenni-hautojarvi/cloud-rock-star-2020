@@ -104,4 +104,4 @@ In this lab you starter your DevOps journey enabling a delivery pipeline for you
 
 <img src="/images/toolchain.png" width="70%" height="70%">
 
-Now that your delivery pipeline is ready go to [Week 1.3 - Modify your application](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.3%20-%20Modify%20your%20application). 
+Now that your delivery pipeline is ready go to [Week 1.3 - Modify your application](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%201.3%20-%20Modify%20your%20application). 

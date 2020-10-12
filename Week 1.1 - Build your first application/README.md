@@ -65,4 +65,4 @@ Access your application by clicking in the 'Visit App URL'.
 Fantastic! Week 1.1 is complete! :smile:
 
 At this point you have created your first Node.js application on IBM Cloud using Cloud Foundry public environment.
-Now that your application is ready go to [Week 1.2 - Enable Delivery Pipeline](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.2%20-%20Enable%20Delivery%20Pipeline). 
+Now that your application is ready go to [Week 1.2 - Enable Delivery Pipeline](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%201.2%20-%20Enable%20Delivery%20Pipeline). 

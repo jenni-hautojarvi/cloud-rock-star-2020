@@ -346,4 +346,4 @@ During this first week, you learned about the components of Node.js and modify t
 
 The Web IDE also has a feature that allows you to customize your application in real-time mode, where you can see the changes before deploying the application. Unfortunately, the simple plan doesn't have enough memory for this.
 
-Now that you know how to modify your code, let's crete a cool application using open data. [Week 2.1 - Add Helsinki Outdoor route API](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%202.1%20-%20Add%20Helsinki%20Outdoor%20route%20API). 
+Now that you know how to modify your code, let's crete a cool application using open data. [Week 2.1 - Add Helsinki Outdoor route API](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%202.1%20-%20Add%20Helsinki%20Outdoor%20route%20API). 
