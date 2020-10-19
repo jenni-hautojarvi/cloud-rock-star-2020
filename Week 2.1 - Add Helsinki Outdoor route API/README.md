@@ -149,4 +149,4 @@ Fantastic! Week 2.1 is complete! :smile:
 At this point you have added data to your first Node.js application on IBM Cloud using Cloud Foundry public environment.
 
 Now that you have outrood routes data it's time to fecth weather data. Go to [
-Week 2.2 - Add Weather API](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%202.2%20-%20Add%20Weather%20API). 
+Week 2.2 - Add Weather API](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%202.2%20-%20Add%20Weather%20API). 
