@@ -63,7 +63,17 @@ You can modify your application code from git or Web IDE. Instructions are for W
 
 4. Add your first Javascript Fetch API. 
 
-Add the Fetch API function to collect JSON file from Helsinki Outdoor nature webpage inside the ``script`` tags. Using fetch we request the data every time we load the application page. **NOTE:** We don't store the data in database.
+Add the Fetch API function to collect JSON file from Helsinki Outdoor nature webpage inside the ``script`` tags. **NOTE: When adding Javascript code single ``script`` tags will do. Don't use like this** 
+
+```html
+<script>
+    <script>
+    //your Javascript code
+    </script>
+</script>
+```
+
+Using fetch we request the data every time we load the application page. **NOTE:** We don't store the data in database.
 
 In the code:
 1. This is the url where we fetch data. **Note: If your application is https:// you can't fetch data from http:// because of Web Security**
