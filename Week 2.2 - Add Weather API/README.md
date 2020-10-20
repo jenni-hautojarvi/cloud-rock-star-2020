@@ -51,6 +51,11 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metri
         });
 </script>
 ```
+- Remember to ``Commit`` and ``Push`` changes to **Git**. Go to **Console**
+
+**Congratulations, you have fecth weather data to your application on IBM Cloud™!** :clap:
+
+<img src="/images/weatherdata.png" width="100%" height="100%">
 
 ## Selecting specific data
 
