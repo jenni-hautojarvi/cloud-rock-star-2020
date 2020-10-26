@@ -120,4 +120,4 @@ Great! You are now done with Week 2!
 
 You have now got weather data to your Application from an API.
 
-You can now move on to learning how to add stuff to your actual webpage in Week 3.1.
+You can now move on to learning how to add stuff to your actual webpage in [Week 3.1. - Set webpae layout](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%203.1%20-%20Set%20webpage%20layout) 
