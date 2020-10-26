@@ -59,6 +59,8 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metri
 
 ## Selecting specific data
 
+For our application we need data from current weather and weather forecast from 2 days. For this we need two seperate fetch function.
+
 ### Current weather
 Here is an example how to get the name of the city you are fetching weather for, description of the weather, temperature and icon. At this point the icon is only a combination of three letters and numbers. Printing the actual icon to the page is covered in a later week.   
 ```html
