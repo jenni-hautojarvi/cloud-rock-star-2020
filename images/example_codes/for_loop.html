@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>NodeJS Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <div id="data"></div>
+    <!-- add script tags for Javascript -->
+    <script>
+    //Helsinki outdoor areas
+        fetch("https://citynature.eu/api/wp/v2/places?cityid=5") // part 1 
+	        .then((response) => { //part 2
+	            return response.json(); //part 3
+	        })
+			    .then((natureJson) => { // 4
+			        console.log(natureJson); // 5
+	                var title = natureJson[0].title; //a
+	                console.log("Title: " + title); //b
+	                var coordinates = natureJson[0].routes.features[0].geometry.coordinates[0]; //c
+	                console.log("Coordinates: " + coordinates);
+	            });
+         
+         //Weather data
+         //Current weather
+         fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=YOURAPIKEY")
+        .then((response) => { 
+            return response.json(); 
+        })
+		.then((weatherJson) => { 
+			console.log(weatherJson); 
+                	var cityName = weatherJson.name; 
+                	var weatherDescription = weatherJson.weather[0].description;
+                	var temperature = weatherJson.main.temp;
+                	var icon = weatherJson.weather[0].icon;
+               		console.log("Name of the city: " + cityName);
+                	console.log("Weather description: " + weatherDescription);
+                	console.log("Temperature: " + temperature + "°C");
+                	console.log("Icon for weather: " + icon);
+            	});
+    
+        //Forecast
+        fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY")
+        .then((response) => { 
+            return response.json(); 
+        })
+        .then((weatherJson) => {
+            console.log(weatherJson);
+            var count = 0;
+            for(var i = 0; i < weatherJson.list.length; i++) { //Loop for going through the results for the forecast
+                var time = weatherJson.list[i].dt_txt;	//eg. "2020-10-09 15:00:00"
+                var hour = time.slice(11, 16);		//Separating the hour from time
+                var date = time.slice(0, 10);		//Separating the date from time
+                if(hour === "12:00"){			//If the hour is 12, data is stored to variables and then printed to console
+                    var description= weatherJson.list[i].weather[0].description;
+                    var temperature= weatherJson.list[i].main.temp + "°C";
+                    console.log(date + " " + hour + " " + description + " " + temperature);
+                    count++;
+                    if(count === 2){ 	//Once you have printed to console twice, you can stop the loop with break-statement. You can change the number depending on how many results you want. Five, however is the maximum amount of result you can get, since the API provides forecast for only five days
+                        break;
+                    }
+                }
+            }
+        });
+    
+        var list_item = ["a", "b", "c"]; 
+            var i; 
+            var text = ""; //initialize the variable to string
+            for(i= 0; i < list_item.length; i++){ //We don't always know how much data we have in our list so it's better to use lenght property
+            //you can keep this if you want
+                console.log(list_item[i]);
+                text += list_item[i] + "<br>"; //We add to text variable list item and row changes
+            };
+            document.getElementById("data").innerHTML = text; //We call HTML element that has id name data and insert (innerHTML) text variable data to it
+    </script>
+  </body>
+
+</html>
