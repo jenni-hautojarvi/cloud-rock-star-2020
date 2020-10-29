@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>NodeJS Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- map -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div id="currentWeather"></div>
+	<div id="futureWeather"></div>
+	<div id=list_outdoor></div>
+	<div id="map">Map</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="anonymous"></script>
+    <!-- add script tags for Javascript -->
+    <script>
+    //Helsinki outdoor areas
+        fetch("https://citynature.eu/api/wp/v2/places?cityid=5") // part 1 
+	        .then((response) => { //part 2
+	            return response.json(); //part 3
+	        })
+			    .then((natureJson) => { // 4
+			        console.log(natureJson); // 5
+	                var title = natureJson[0].title; //a
+	                console.log("Title: " + title); //b
+	                var coordinates = natureJson[0].routes.features[0].geometry.coordinates[0]; //c
+	                console.log("Coordinates: " + coordinates);
+	                var outdoor_list = "";
+	                for (var i = 0; i < natureJson.length; i++) {
+	                	
+                    outdoor_list += '<li class="list-group-item list-group-item-action list-group-item-success"> <h5>Place name:</h5><h4>' 
+                    + natureJson[i].title +'</h4> </li>  <br>';
+	                	}
+	                document.getElementById("list_outdoor").innerHTML = outdoor_list;
+	            });
+         
+         //Weather data
+         
+         //Current weather data
+         fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=acd69176ea77fce31033d15aafb7e3c4")
+        .then((response) => { 
+            return response.json(); 
+        })
+		.then((weatherJson) => { 
+			console.log(weatherJson); 
+            var cityName = weatherJson.name; 
+            var weatherDescription = weatherJson.weather[0].description;
+            var temperature = weatherJson.main.temp;
+            var icon = weatherJson.weather[0].icon;
+            console.log("Name of the city: " + cityName);
+            console.log("Weather description: " + weatherDescription);
+            console.log("Temperature: " + temperature + "°C");
+            console.log("Icon for weather: " + icon);
+       
+		    var weather_icon = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+		  
+			var currWeather = document.getElementById("currentWeather");
+			    currWeather.innerHTML = "<div>City: " + cityName + "<br>Description: <br>" + weatherDescription + "<br>Temperature: <br>" + temperature +"°C <br>" + 
+			    "</div><div><img src=" + weather_icon + "></img></div>";
+		        });
+		
+		//Forecast
+		fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=acd69176ea77fce31033d15aafb7e3c4")
+		.then((response) => { 
+			return response.json(); 
+		})
+		.then((weatherJson) => {
+			console.log(weatherJson);
+			var weatherArray = "";
+			var count = 0;
+			for(var i = 0; i < weatherJson.list.length; i++) { //Loop for going through the results for the forecast
+				var time = weatherJson.list[i].dt_txt;	//eg. "2020-10-09 15:00:00"
+				var hour = time.slice(11, 16);		//Separating the hour from time
+				var date = time.slice(0, 10);		//Separating the date from time
+				if(hour === "12:00"){			//If the hour is 12, data is stored to variables and then printed to console
+					var description= weatherJson.list[i].weather[0].description;
+					var temperature= weatherJson.list[i].main.temp + "°C";
+					var icon = "https://openweathermap.org/img/wn/" + weatherJson.list[i].weather[0].icon + "@2x.png"; 
+					console.log(date + " " + hour + " " + description + " " + temperature);
+					weatherArray += "<div>Date: " + date + "<br>Hour: " +hour + "<br>Description: " + description + "<br>Temperature: " + temperature + "°C<br>" 
+					+ "</div><div><img src=" + icon + "></img><br><br></div>";
+					count++;
+					if(count === 2){
+						break;
+					}
+			}
+		}
+		var futWeather = document.getElementById("futureWeather");
+		futWeather.innerHTML = weatherArray;
+	});
+	
+	//Map
+	var mymap = L.map('map').setView([60.1699, 24.93], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	       maxZoom: 19,
+	       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+        
+    </script>
+  </body>
+
+</html>

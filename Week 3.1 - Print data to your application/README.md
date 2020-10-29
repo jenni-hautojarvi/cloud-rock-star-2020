@@ -219,6 +219,8 @@ Now let's print map to your application. We are going to use Leaflet.
 
 <img src="/images/map_list.png" width="100%" height="100%">
 
+:bulb: Your code should looks like [this](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/blob/master/images/example_codes/map.html)
+
 ## Summary
 
 Fantastic! Week 3.1 is complete! :blush:
