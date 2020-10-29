@@ -50,7 +50,7 @@ We want to print every item from a list called list_item = ["a", "b", "c"]. Stri
 
 4. See result from your browser console log
 
-<img src="/images/for_loop_result.png" width="50%" height="50%">
+<img src="/images/for_loop_result.png" alt="for_loop_result" width="50%" height="50%">
 
 **More information:** [Visit w3schools.com](https://www.w3schools.com/js/js_loop_for.asp)
 
