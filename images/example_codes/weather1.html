@@ -30,7 +30,7 @@
          //Weather data
          
          //Current weather data
-         fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=acd69176ea77fce31033d15aafb7e3c4")
+         fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=YOURAPIKEY")
         .then((response) => { 
             return response.json(); 
         })
@@ -53,7 +53,7 @@
 		        });
 		
 		//Forecast
-		fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=acd69176ea77fce31033d15aafb7e3c4")
+		fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY")
 		.then((response) => { 
 			return response.json(); 
 		})
