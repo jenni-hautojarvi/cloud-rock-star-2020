@@ -225,5 +225,5 @@ Fantastic! Week 3.1 is complete! :blush:
 
 You now know how loops works and how to initialize variable. You also now know how to connect and print data to your html page using JavaScript. Nice job! :+1:
 
-Next lets check how to change layout and you can start designing your application layout [Week 3.2 - Set application layout](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%203.2%20-%20Set%20application%20layout)
+Next lets check how to change layout and you can start designing your application layout [Week 3.2 - Set application layout](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%203.2%20-%20Set%20application%20layout)
  
