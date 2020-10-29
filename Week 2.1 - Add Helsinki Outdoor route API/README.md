@@ -3,7 +3,9 @@
 In this lab we fetch a JSON file accross the network and print it to the JS console.
 
   - [Need to know](#need-to-know)
-  - [Create your first app](#create-your-first-app)
+  - [Add your first Javascript code](#add-your-first-javascript-code)
+  - [How to select spefic detail from JSON data](#how-to-select-spefic-detail-from-json-data)
+  
   - [Summary](#summary)
   
 
@@ -72,7 +74,6 @@ Add the Fetch API function to collect JSON file from Helsinki Outdoor nature web
     </script>
 </script>
 ```
-
 Using fetch we request the data every time we load the application page. **NOTE:** We don't store the data in database.
 
 In the code:
@@ -159,4 +160,4 @@ Fantastic! Week 2.1 is complete! :smile:
 At this point you have added data to your first Node.js application on IBM Cloud using Cloud Foundry public environment.
 
 Now that you have outrood routes data it's time to fecth weather data. Go to [
-Week 2.2 - Add Weather API](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%202.2%20-%20Add%20Weather%20API). 
+Week 2.2 - Add Weather API](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%202.2%20-%20Add%20Weather%20API). 
