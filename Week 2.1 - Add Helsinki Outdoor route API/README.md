@@ -13,7 +13,7 @@ In this lab we fetch a JSON file accross the network and print it to the JS cons
 
 **Javascript**: JavaScript is a programming language that allows you to implement complex features on web pages and it is the world's most popular web programming language. It's also free to use and already running in browser on computers, tablets and smart-phones. If you are intered to learn more click this: [w3schools](https://www.w3schools.com/js/DEFAULT.asp).
 
-**Fetch API**: provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. More information: [Here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+**Fetch API**: provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. More information: [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 **Helsinki outdoor data**: Citynature.eu offers an open REST API interface (licence CC BY 4.0) that can be used by application developers to utilise the information from both Helsinki and Tallinn available on the site. More information: [Citynature.eu](https://citynature.eu/en/to-the-developers/)
 
