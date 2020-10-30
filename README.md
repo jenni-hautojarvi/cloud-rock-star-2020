@@ -52,4 +52,4 @@ This challenge uses [Explore Helsinki nature](https://citynature.eu/en/helsinki/
 ## Summary
 
 Time to get started with the first week! 
-Go to [Week 1.1 - Build your first application](https://github.com/jenni-hautojarvi/cloud-rock-star/tree/master/Week%201.1%20-%20Build%20your%20first%20application).
+Go to [Week 1.1 - Build your first application](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%201.1%20-%20Build%20your%20first%20application).
