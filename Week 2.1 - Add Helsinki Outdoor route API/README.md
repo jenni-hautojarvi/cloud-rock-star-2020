@@ -96,6 +96,8 @@ In the code:
 </script>
 ```
 
+**Read More:** [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
 After you have updated ``<script>`` part remember to ``Commit`` and ``Push`` the changes to Git or you can't see the changes in your application.
 
 5. Open your application and find your browser JS console
