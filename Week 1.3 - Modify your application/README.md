@@ -344,6 +344,6 @@ Week 1.3 is complete! Good Job! You have now comleted your first week challenge!
 
 During this first week, you learned about the components of Node.js and modify the source code of the sample application. If you want, you can use the Gitlab for this challenge. However, if you are using a Web IDE, the interface has a feature to help you verify your code. For example, you may notice that in Gitlab you did not see any errors or additional information about your code, but in the Web IDE, line 16 had a sympol indicating that the image tag was missing alt (We will come to this later what alt is).
 
-The Web IDE also has a feature that allows you to customize your application in real-time mode, where you can see the changes before deploying the application. Unfortunately, the simple plan doesn't have enough memory for this.
+The Web IDE also has a feature that allows you to customize your application in real-time mode, where you can see the changes before deploying the application. Unfortunately, the Lite plan doesn't have enough memory for this.
 
 Now that you know how to modify your code, let's crete a cool application using open data. [Week 2.1 - Add Helsinki Outdoor route API](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/tree/master/Week%202.1%20-%20Add%20Helsinki%20Outdoor%20route%20API). 
