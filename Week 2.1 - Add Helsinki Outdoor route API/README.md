@@ -55,7 +55,7 @@ You can modify your application code from git or Web IDE. Instructions are for W
         </td>
       </tr>
     </table>
-    <!-- add script tags for Javascript Note: This is how to comment html code-->
+    <!-- add script tags for JavaScript Note: This is how to comment html code-->
     <script>
     </script>
   </body>
@@ -65,12 +65,12 @@ You can modify your application code from git or Web IDE. Instructions are for W
 
 4. Add your first Javascript Fetch API. 
 
-Add the Fetch API function to collect JSON file from Helsinki Outdoor nature webpage inside the ``script`` tags. **NOTE: When adding Javascript code single ``script`` tags will do. Don't use like this** 
+Add the Fetch API function to collect JSON file from Helsinki Outdoor nature webpage inside the ``<script>`` tags. **NOTE: When adding Javascript code single ``<script>`` tags will do. Don't use like this** 
 
 ```html
 <script>
     <script>
-    //your Javascript code
+    //your JavaScript code
     </script>
 </script>
 ```
@@ -96,7 +96,7 @@ In the code:
 </script>
 ```
 
-After you have updated ``script`` part remember to **commit** and **push** the changes to Git or you can't see the changes in your application.
+After you have updated ``<script>`` part remember to ``Commit`` and ``Push`` the changes to Git or you can't see the changes in your application.
 
 5. Open your application and find your browser JS console
 - Safari: Develop -> Show JavaScript console
@@ -123,6 +123,8 @@ JSON data contains object and list of object. Word JSON comes from **J**ava**S**
 - Here you can see that our outdoor data is in a list [] that has object {}. It can also contain objects inside object. In our data list we have 11 objects.
 
 <img src="/images/Console-outdoor-data.png" width="100%" height="100%">
+
+**Read More:** [JSON w3school](https://www.w3schools.com/js/js_json_intro.asp)
 
 6. Let's print only the first object title and first coordinate values.
 
