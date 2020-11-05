@@ -34,7 +34,7 @@ Instructions:
 When fetching the current weather, use https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=YOURAPIKEY URL.
 Forecast can be fetched from https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY  
 
-**Remember to replace YOURAPIKEY with your apikey.**  
+**Remember to replace YOURAPIKEY with your apikey.** You don't need ``""`` or ``''`` for this. Example https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=thiscouldbeyourapikey15729940
 
 More on getting weather data:  
 https://openweathermap.org/current  
