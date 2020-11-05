@@ -23,9 +23,11 @@ Instructions:
 
 2. Create an Account  
 <img src="../images/owcreate.png" width="75%">  
-<img src="../images/owcreate2.png" width="75">  
+<img src="../images/owcreate2.png" width="75%">  
+
 3. When you sign in and see the home page, you can just click the api keys tab to get your api key
 <img src="../images/owapikeys.png" width="75%">  
+
 4. Alternatively if you are not in the home page view, you can click on your name at the top right of the screen and select “My API keys”
 <img src="../images/owalternative.png" width="75%">  
 
