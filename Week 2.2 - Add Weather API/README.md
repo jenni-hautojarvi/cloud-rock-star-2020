@@ -17,11 +17,11 @@ API key: A code used to identify user. Gives a set of access rights for the API.
 In order to get weather information through the OpenWeather api, you need an Apikey to authorize the request you make in your application. We will be using the free version of OpenWeatherMap in this application. You do not need to give payment information anywhere. Note that it can take up to 2 hour to activate your API key, so do this first.  
 
 Instructions:
-Go to https://openweathermap.org/ and click sign in  
+1. Go to https://openweathermap.org/ and click sign in  
 
 <img src="../images/owfront.png" width="75%">  
 
-Create an Account  
+3. Create an Account  
 <img src="../images/owcreate.png" width="75%">  
 <img src="../images/owcreate2.png" width="75">  
 When you sign in and see the home page, you can just click the api keys tab to get your api key
@@ -31,7 +31,7 @@ Alternatively if you are not in the home page view, you can click on your name a
 
 When fetching the current weather, use https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=YOURAPIKEY URL.
 Forecast can be fetched from https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY  
-Remember to replace YOURAPIKEY with your apikey.  
+**Remember to replace YOURAPIKEY with your apikey.**  
 More on getting weather data:  
 https://openweathermap.org/current  
 https://openweathermap.org/forecast5  
