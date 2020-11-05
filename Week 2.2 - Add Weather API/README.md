@@ -21,17 +21,19 @@ Instructions:
 
 <img src="../images/owfront.png" width="75%">  
 
-3. Create an Account  
+2. Create an Account  
 <img src="../images/owcreate.png" width="75%">  
 <img src="../images/owcreate2.png" width="75">  
-When you sign in and see the home page, you can just click the api keys tab to get your api key
+3. When you sign in and see the home page, you can just click the api keys tab to get your api key
 <img src="../images/owapikeys.png" width="75%">  
-Alternatively if you are not in the home page view, you can click on your name at the top right of the screen and select “My API keys”
+4. Alternatively if you are not in the home page view, you can click on your name at the top right of the screen and select “My API keys”
 <img src="../images/owalternative.png" width="75%">  
 
 When fetching the current weather, use https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=YOURAPIKEY URL.
 Forecast can be fetched from https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY  
+
 **Remember to replace YOURAPIKEY with your apikey.**  
+
 More on getting weather data:  
 https://openweathermap.org/current  
 https://openweathermap.org/forecast5  
