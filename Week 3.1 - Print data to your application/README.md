@@ -172,7 +172,7 @@ Now we make a list of outdoor places. Let's do the same as we did with weather d
 
 Now let's print map to your application. We are going to use Leaflet.
 
-13. Open your ``index.html``. Add ``div``with id called **map**. After this add this (**FULL**) code after div. We need it show that we can print the map :smile:
+13. Open your ``index.html``. Add ``div``with id called **mapid**. After this add this (**FULL**) code after div. We need it show that we can print the map :smile:
 - Do not add anything inside this ``<script>``element!
 
 
@@ -209,7 +209,7 @@ Now let's print map to your application. We are going to use Leaflet.
 
 ```css
 
-#map { 
+#mapid { 
     height: 500px; 
         }
 

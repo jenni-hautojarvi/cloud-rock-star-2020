@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Cloud Star Application</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="anonymous" />
+      <!-- jQuery library -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>        
+        #mapid { 
+            height: 500px; 
+        }
+    </style>
+  </head>
+
+  <body>
+ 
+<div class="container">     
+ 	<h1 class="mainTitle text-center">Helsinki Outdoor recreation app</h1>
+ 	<div class="row" id='weather'>
+ 		<div class="col-sm-4">
+		  	<h3>Current weather in Helsinki</h3>
+		  	<br>
+		  	<br>
+		  	<br>
+		  	<!--This is where the current weather is shown -->
+            <div class="row" id="currentWeather">
+                </div>
+		</div>
+		<div class="col-sm-8">
+		   	<h3>Forecast for Helsinki</h3>
+		   	<!--These buttons allow time change -->
+		   	<button class="btn btn-info" onclick="changeTime('12:00')">12:00</button>
+		   	<button class="btn btn-info" onclick="changeTime('15:00')">15:00</button>
+		   	<button class="btn btn-info" onclick="changeTime('18:00')">18:00</button>
+		   	<br>
+            <br>
+            <!--Weather forecast is shown here -->
+		   	<div class="row" id="futureWeather"></div>
+	   	</div>
+	</div>
+  <br>
+          
+          <div class="row" id="ulkoilu">
+              <div class="col-sm-4">
+                  <h3>Outdoor locations</h3>
+                  <ul class="list-group" id="list_outdoor">Lista paikoista</ul>
+              </div>
+              <div class="col-sm-8"><h3>Helsinki map</h3><div id="mapid">Map</div></div>
+          </div>
+      </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="anonymous"></script>
+    <script>
+        //Luonto-alueet
+        fetch("https://citynature.eu/api/wp/v2/places?cityid=5")
+            .then((response) => {
+		        return response.json();
+		    })
+		    .then((natureJson) => {
+                for (var i = 0; i < natureJson.length; i++) {
+                    if (natureJson[i].routes !== null){
+                        var coor = natureJson[i].routes.features[0].geometry.coordinates;
+                        
+                        document.getElementById("list_outdoor").innerHTML += 
+                            '<li class="list-group-item list-group-item-action list-group-item-success"> \
+                                <h5>Place name:</h5> \
+                                <h4>' + natureJson[i].title +'</h4> \
+                                <button type="button" class="btn btn-info" onclick="showMap( \'' + natureJson[i].title +  '\', \'' + JSON.stringify(coor) + '\');">Show  on map</button> \
+                             </li>  <br>';
+                    }
+                }
+            });
+         
+        var mymap = L.map('mapid').setView([60.1699, 24.93], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	       maxZoom: 19,
+	       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+            
+        var layerGroup = L.layerGroup([]);
+        layerGroup.addTo(mymap);
+      
+
+        function showMap(place_name, coordinates){
+            var coor = JSON.parse(coordinates);
+            var reversedCoor = reverseCoordinates(coor);
+            var marker = L.marker(reversedCoor[0]).addTo(mymap)
+                    .bindPopup(place_name)
+                    .openPopup();
+            
+            var polygon = L.polygon(reversedCoor, {color: 'black', fillColor: '#f03', fillOpacity: 1}).addTo(mymap);
+            
+            layerGroup.addLayer(polygon, marker);
+            
+            mymap.panTo(reversedCoor[0]);
+        }
+        
+        function reverseCoordinates(coor){
+            var result = [];
+            coor.forEach((item) => {
+                result.push(item.reverse());
+            })
+            return result;
+        }
+        
+      </script>
+      
+      <script>
+        //Getting the current weather for Helsinki from the OpenWeatherMap api
+          fetch("https://api.openweathermap.org/data/2.5/weather?q=Helsinki,fi&units=metric&&APPID=acd69176ea77fce31033d15aafb7e3c4")
+           .then((response) => {
+		    return response.json();
+		  })
+		  .then((myJson) => {
+		    var icon = "https://openweathermap.org/img/wn/" + myJson.weather[0].icon + "@2x.png";
+		    var currWeather = document.getElementById("currentWeather");
+		    currWeather.innerHTML = "<div class='col'>City: " + myJson.name + "<br>Description: <br>" + myJson.weather[0].description + "<br>Temperature: <br>" + myJson.main.temp +"°C <br>" + 
+		    "</div><div class='col'><img src=" + icon + "></img></div>";
+		  }); 
+          
+        var forecast;
+
+		 //Getting the weather forecast for Helsinki from the OpenWeatherMap api	  
+		  fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=acd69176ea77fce31033d15aafb7e3c4")
+           .then((response) => {
+		    return response.json();
+		  })
+		  .then((myJson) => {
+            forecast=myJson;
+            changeTime("12:00");
+		  	}); 
+        
+        // Function for changing the time
+        function changeTime(clock) {
+            var weatherDiv = " ";
+			var count = 0;
+
+			//Going through a list that has weather forecast
+            for(var i = 0; i< forecast.list.length; i++) {
+                var time = forecast.list[i].dt_txt;
+                var hour = time.slice(11, 16);
+                var date = time.slice(0, 10);
+                
+                //If the hour from the button click matches the hour on the forecast list item, then that item is put to the variable that is shown on the page
+                if(hour === clock){
+                    var icon = "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png";
+                    weatherDiv += "<div class='col'>Date: " + date + "<br>Hour: " +hour +"<br>Description: " + forecast.list[i].weather[0].description + "<br>Temperature: " + forecast.list[i].main.temp + "°C</div><div class='col'>" + "<img src=" + icon + "></img><br><br></div>";
+                    count++;
+                    if(count === 2){
+                        break;
+                    }
+                }
+		  	}
+		  	document.getElementById("futureWeather").innerHTML = weatherDiv;
+        }
+    </script>
+
+  </body>
+
+</html>

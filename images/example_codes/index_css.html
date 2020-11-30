@@ -9,14 +9,40 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <!-- map -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="anonymous" />
+  	<!-- bootstrap -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <div id="currentWeather"></div>
-	<div id="futureWeather"></div>
-	<div id=list_outdoor></div>
-	<div id="mapid">Map</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="anonymous"></script>
+	<div class="container">
+		<h1 class="mainTitle text-center">Helsinki Outdoor recreation app</h1>
+	    <!--weather -->
+	    <div class="row" id="weather">
+	 		<div class="col-sm-4">
+	 			<h3>Current weather in Helsinki</h3>
+	            <div class="row" id="currentWeather"></div>
+	        </div>
+	        <div class="col-sm-8">
+	        	<h3>Forecast for Helsinki</h3>
+		       <div class="row" id="futureWeather"></div>
+	        </div>
+	    </div>
+	    <!-- outdoor-->
+	    <div class="row" id="outdoor">
+	        <div class="col-sm-4">
+	           <h3>Outdoor locations</h3>
+		       <div id=list_outdoor></div>
+	        </div>
+	        <div class="col-sm-8">
+	        	<h3>Helsinki map</h3>
+		       	<div id="mapid">Map</div>
+	        </div>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="anonymous"></script>
+	    </div>
+	</div>
     <!-- add script tags for Javascript -->
     <script>
     //Helsinki outdoor areas
@@ -60,12 +86,12 @@
 		    var weather_icon = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 		  
 			var currWeather = document.getElementById("currentWeather");
-			    currWeather.innerHTML = "<div>City: " + cityName + "<br>Description: <br>" + weatherDescription + "<br>Temperature: <br>" + temperature +"°C <br>" + 
-			    "</div><div><img src=" + weather_icon + "></img></div>";
+			    currWeather.innerHTML = "<div class='col'>City: " + cityName + "<br>Description: <br>" + weatherDescription + "<br>Temperature: <br>" + temperature +"°C <br>" + 
+			    "</div><div class='col'><img src=" + weather_icon + "></img></div>";
 		        });
 		
 		//Forecast
-		fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=YOURAPIKEY")
+		fetch("https://api.openweathermap.org/data/2.5/forecast?q=Helsinki&units=metric&&appid=acd69176ea77fce31033d15aafb7e3c4")
 		.then((response) => { 
 			return response.json(); 
 		})
@@ -82,8 +108,8 @@
 					var temperature= weatherJson.list[i].main.temp + "°C";
 					var icon = "https://openweathermap.org/img/wn/" + weatherJson.list[i].weather[0].icon + "@2x.png"; 
 					console.log(date + " " + hour + " " + description + " " + temperature);
-					weatherArray += "<div>Date: " + date + "<br>Hour: " +hour + "<br>Description: " + description + "<br>Temperature: " + temperature + "°C<br>" 
-					+ "</div><div><img src=" + icon + "></img><br><br></div>";
+					weatherArray += "<div class='col'>Date: " + date + "<br>Hour: " +hour + "<br>Description: " + description + "<br>Temperature: " + temperature + "<br>" 
+					+ "</div><div class='col'><img src=" + icon + "></img><br><br></div>";
 					count++;
 					if(count === 2){
 						break;

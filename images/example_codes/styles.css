@@ -1,0 +1,30 @@
+body{
+    background-image: url(https://i.pinimg.com/originals/ce/7f/55/ce7f55d0ce9ec88c238f4f0f5731d809.jpg);
+    background-repeat: no-repeat;
+  	background-size: cover;
+}
+#mapid { 
+    height: 500px; 
+}
+* {
+  box-sizing: border-box;
+}
+.list-group{
+max-height: 500px;
+margin-bottom: 10px;
+overflow-y:scroll;
+
+-webkit-overflow-scrolling: touch;
+}
+#weather{
+    background-color: skyblue;
+    padding: 15px 0px 15px 0px;
+}
+.container{
+    background-color: rgba(192,192,192,0.65);
+    padding: 25px;
+}
+#list_outdoor{
+    background-color: rgba(192,192,192,0.8);
+    padding: 5px;
+}
