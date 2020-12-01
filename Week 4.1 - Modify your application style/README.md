@@ -223,7 +223,7 @@ If you are interested in these go to [getbootstrap.com](https://getbootstrap.com
 
 You may now have made your own application layout and thats okay. But here is a example how to start :blush:
 
-So at this point your html code should look like [this.](https://github.com/jenni-hautojarvi/cloud-rock-star/blob/master/images/example_codes/map.html)
+So at this point your html code should look like [this.](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/blob/master/images/example_codes/map.html)
 
 
 1. Add in header part needed bootstrap files
@@ -400,7 +400,7 @@ body{
 
 <img src="../images/application_css.png" alt="css" width="80%"> 
 
-:bulb: Your HTML code should look like [this](https://github.com/jenni-hautojarvi/cloud-rock-star/blob/master/images/example_codes/index_css.html)
+:bulb: Your HTML code should look like [this](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/blob/master/images/example_codes/index_css.html)
 
 7. Add buttons
 
@@ -438,7 +438,7 @@ Now you have buttons in your applications! Nice work! :smile:
 <img src="../images/application_buttons.png" alt="css" width="80%">
 
 
-:bulb: Your HTML code should looks like [this](https://github.com/jenni-hautojarvi/cloud-rock-star/blob/master/images/example_codes/application_with_buttons.html)
+:bulb: Your HTML code should looks like [this](https://github.com/jenni-hautojarvi/cloud-rock-star-2020/blob/master/images/example_codes/application_with_buttons.html)
 
 
 ## Summary
