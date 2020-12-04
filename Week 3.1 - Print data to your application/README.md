@@ -136,6 +136,17 @@ Let's update current weather and forecast at the sametime :smile:
 weatherArray += "<div>Date: " + ? + "<br>Hour: " + ? + "<br>Description: " + ? + "<br>Temperature: " + ? + "°C<br>" + "</div><div><img src=" + ? + "></img><br><br></div>";
 </script>
 ```
+- Next we need to add code that prints the data to your application, like we did in current weather. Add it before last **}** mark.
+
+```Javascript
+
+}
+    var futWeather = document.getElementById("futureWeather"); //ADD THIS
+    futWeather.innerHTML = weatherArray; //ADD THIS
+
+});
+
+```
 
 **Congratulations, you have now printed weather data to your application page** :+1:
 
